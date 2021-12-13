@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hotkey_holder/hotkey_holder.dart';
-import 'package:magnetica/magnetica.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +32,14 @@ class _MyAppState extends State<MyApp> {
               const Text("shortcut type A"),
               HotKeyHolder(
                   hotKeyName: "shortcutA",
+                  onInput: (keyCombo) {
+                    print("shortcut A's keyCombo is input");
+                    print(keyCombo.modifiers);
+                    print(keyCombo.key);
+                  },
+                  onDelete: () {
+                    print("shortcut A is deleted");
+                  },
                   event: () {
                     print("this is shortcut A");
                   }),
@@ -40,11 +47,17 @@ class _MyAppState extends State<MyApp> {
               const Text("shortcut type B"),
               HotKeyHolder(
                   hotKeyName: "shortcutB",
+                  onInput: (keyCombo) {
+                    print("shortcut B's keyCombo is input");
+                  },
+                  onDelete: () {
+                    print("shortcut B is deleted");
+                  },
                   event: () {
                     print("this is shortcut B");
                   },
-                  keyCombo: KeyCombo(
-                      key: KeyCharacter.b, modifiers: [Modifier.command])),
+                  keyCombo: HotKeyHolderKeyCombo(
+                      key: HotKeyHolderKeyCharacter.b, modifiers: [HotKeyHolderModifier.command])),
             ],
           ),
         ),

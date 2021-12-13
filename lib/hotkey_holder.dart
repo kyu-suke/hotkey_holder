@@ -8,14 +8,29 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:magnetica/magnetica.dart';
 
+typedef HotKeyHolderKeyCharacter = KeyCharacter;
+typedef HotKeyHolderModifier = Modifier;
+class HotKeyHolderKeyCombo extends KeyCombo {
+  final KeyCharacter key;
+  final Modifiers modifiers;
+  HotKeyHolderKeyCombo({required this.key, this.modifiers = const []}):super(key: key, modifiers: modifiers);
+}
+
 class HotKeyHolder extends StatefulWidget {
   const HotKeyHolder(
-      {Key? key, required this.hotKeyName, required this.event, this.keyCombo})
+      {Key? key,
+      required this.hotKeyName,
+      required this.onInput,
+      required this.onDelete,
+      required this.event,
+      this.keyCombo})
       : super(key: key);
 
   final String hotKeyName;
   final Function event;
-  final KeyCombo? keyCombo;
+  final void Function(HotKeyHolderKeyCombo) onInput;
+  final Function onDelete;
+  final HotKeyHolderKeyCombo? keyCombo;
 
   @override
   _HotKeyHolderState createState() => _HotKeyHolderState();
@@ -108,7 +123,7 @@ class _HotKeyHolderState extends State<HotKeyHolder> {
 
     final modifiers = map["modifiers"].cast<String?>() as List<String?>;
     final mods =
-    modifiers.map((String? e) => ModifierExtension.fromString(e!)).toList();
+        modifiers.map((String? e) => ModifierExtension.fromString(e!)).toList();
     setState(() {
       _initTextStyle();
       _coloringTextStyle(mods);
@@ -119,16 +134,18 @@ class _HotKeyHolderState extends State<HotKeyHolder> {
       }
 
       _keyChar = char;
+      final keyCombo =HotKeyHolderKeyCombo(
+          key: KeyCharacterExtension.fromString(map["character"]),
+          modifiers: modifiers
+              .map((String? e) => ModifierExtension.fromString(e!))
+              .toList()) ;
       Magnetica.register(
-          keyCombo: KeyCombo(
-              key: KeyCharacterExtension.fromString(map["character"]),
-              modifiers: modifiers
-                  .map((String? e) => ModifierExtension.fromString(e!))
-                  .toList()),
+          keyCombo: keyCombo,
           hotKeyName: widget.hotKeyName,
           hotKeyFunction: widget.event);
 
       FocusManager.instance.primaryFocus?.unfocus();
+      widget.onInput(keyCombo);
     });
   }
 
@@ -137,6 +154,7 @@ class _HotKeyHolderState extends State<HotKeyHolder> {
       _initTextStyle();
       _keyChar = "";
       Magnetica.unregister(hotKeyName: widget.hotKeyName);
+      widget.onDelete();
     });
   }
 
