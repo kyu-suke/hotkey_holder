@@ -10,10 +10,13 @@ import 'package:magnetica/magnetica.dart';
 
 typedef HotKeyHolderKeyCharacter = KeyCharacter;
 typedef HotKeyHolderModifier = Modifier;
+
 class HotKeyHolderKeyCombo extends KeyCombo {
   final KeyCharacter key;
   final Modifiers modifiers;
-  HotKeyHolderKeyCombo({required this.key, this.modifiers = const []}):super(key: key, modifiers: modifiers);
+
+  HotKeyHolderKeyCombo({required this.key, this.modifiers = const []})
+      : super(key: key, modifiers: modifiers);
 }
 
 class HotKeyHolder extends StatefulWidget {
@@ -134,11 +137,11 @@ class _HotKeyHolderState extends State<HotKeyHolder> {
       }
 
       _keyChar = char;
-      final keyCombo =HotKeyHolderKeyCombo(
+      final keyCombo = HotKeyHolderKeyCombo(
           key: KeyCharacterExtension.fromString(map["character"]),
           modifiers: modifiers
               .map((String? e) => ModifierExtension.fromString(e!))
-              .toList()) ;
+              .toList());
       Magnetica.register(
           keyCombo: keyCombo,
           hotKeyName: widget.hotKeyName,

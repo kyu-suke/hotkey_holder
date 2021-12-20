@@ -13,9 +13,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  HotKeyHolderKeyCombo? _keyCombo;
+
   @override
   void initState() {
     super.initState();
+    setState(() {
+      _keyCombo = HotKeyHolderKeyCombo(
+          key: HotKeyHolderKeyCharacter.q,
+          modifiers: [HotKeyHolderModifier.control]);
+    });
   }
 
   @override
@@ -57,7 +64,22 @@ class _MyAppState extends State<MyApp> {
                     print("this is shortcut B");
                   },
                   keyCombo: HotKeyHolderKeyCombo(
-                      key: HotKeyHolderKeyCharacter.b, modifiers: [HotKeyHolderModifier.command])),
+                      key: HotKeyHolderKeyCharacter.b,
+                      modifiers: [HotKeyHolderModifier.command])),
+              const SizedBox(height: 20),
+              const Text("shortcut type C"),
+              HotKeyHolder(
+                  hotKeyName: "shortcutC",
+                  onInput: (keyCombo) {
+                    print("shortcut C's keyCombo is input");
+                  },
+                  onDelete: () {
+                    print("shortcut C is deleted");
+                  },
+                  event: () {
+                    print("this is shortcut C");
+                  },
+                  keyCombo: _keyCombo),
             ],
           ),
         ),
