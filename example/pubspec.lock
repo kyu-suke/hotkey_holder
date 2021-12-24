@@ -93,7 +93,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "3d97fa741c9274db351455bdeead4824bb38b941"
+      resolved-ref: "6dc9995acf5cc3e2bd56996a7a31dee3d718f0c4"
       url: "https://github.com/kyu-suke/magnetica.git"
     source: git
     version: "0.0.1"

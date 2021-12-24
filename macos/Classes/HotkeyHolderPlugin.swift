@@ -101,203 +101,210 @@ public extension FlutterViewController {
 public extension KeyCombo {
     var convertCharacter: String {
         get {
-            var character = ""
             switch self.QWERTYKeyCode {
             case kVK_ANSI_A:
-                character = "a"
+                return "a"
             case kVK_ANSI_S:
-                character = "s"
+                return "s"
             case kVK_ANSI_D:
-                character = "d"
+                return "d"
             case kVK_ANSI_F:
-                character = "f"
+                return "f"
             case kVK_ANSI_H:
-                character = "h"
+                return "h"
             case kVK_ANSI_G:
-                character = "g"
+                return "g"
             case kVK_ANSI_Z:
-                character = "z"
+                return "z"
             case kVK_ANSI_X:
-                character = "x"
+                return "x"
             case kVK_ANSI_C:
-                character = "c"
+                return "c"
             case kVK_ANSI_V:
-                character = "v"
+                return "v"
             case kVK_ANSI_B:
-                character = "b"
+                return "b"
             case kVK_ANSI_Q:
-                character = "q"
+                return "q"
             case kVK_ANSI_W:
-                character = "w"
+                return "w"
             case kVK_ANSI_E:
-                character = "e"
+                return "e"
             case kVK_ANSI_R:
-                character = "r"
+                return "r"
             case kVK_ANSI_Y:
-                character = "y"
+                return "y"
             case kVK_ANSI_T:
-                character = "t"
+                return "t"
             case kVK_ANSI_1:
-                character = "1"
+                return "1"
             case kVK_ANSI_2:
-                character = "2"
+                return "2"
             case kVK_ANSI_3:
-                character = "3"
+                return "3"
             case kVK_ANSI_4:
-                character = "4"
+                return "4"
             case kVK_ANSI_6:
-                character = "6"
+                return "6"
             case kVK_ANSI_5:
-                character = "5"
+                return "5"
             case kVK_ANSI_Equal:
-                character = "="
+                return "="
             case kVK_ANSI_9:
-                character = "9"
+                return "9"
             case kVK_ANSI_7:
-                character = "7"
+                return "7"
             case kVK_ANSI_Minus:
-                character = "-"
+                return "-"
             case kVK_ANSI_8:
-                character = "8"
+                return "8"
             case kVK_ANSI_0:
-                character = "0"
+                return "0"
             case kVK_ANSI_RightBracket:
-                character = "RightBracket"
+                return "RightBracket"
             case kVK_ANSI_O:
-                character = "O"
+                return "o"
             case kVK_ANSI_U:
-                character = "U"
+                return "u"
             case kVK_ANSI_LeftBracket:
-                character = "LeftBracket"
+                return "LeftBracket"
             case kVK_ANSI_I:
-                character = "i"
+                return "i"
             case kVK_ANSI_P:
-                character = "p"
+                return "p"
             case kVK_ANSI_L:
-                character = "l"
+                return "l"
             case kVK_ANSI_J:
-                character = "j"
+                return "j"
             case kVK_ANSI_Quote:
-                character = "'"
+                return "'"
             case kVK_ANSI_K:
-                character = "k"
+                return "k"
             case kVK_ANSI_Semicolon:
-                character = ";"
+                return ";"
             case kVK_ANSI_Backslash:
-                character = "\\"
+                return "\\"
             case kVK_ANSI_Comma:
-                character = ","
+                return ","
             case kVK_ANSI_Slash:
-                character = "/"
+                return "/"
             case kVK_ANSI_N:
-                character = "n"
+                return "n"
             case kVK_ANSI_M:
-                character = "m"
+                return "m"
             case kVK_ANSI_Period:
-                character = "."
+                return "."
             case kVK_ANSI_Grave:
-                character = "`"
-            case kVK_Return:
-                character = "⏎"
-            case kVK_Tab:
-                character = "⇔"
-            case kVK_Space:
-                character = "☐"
-            case kVK_Delete:
-                character = "⌫"
-            case kVK_Escape:
-                character = "Esc"
-            case kVK_Command:
-                character = "⌘"
-            case kVK_Shift:
-                character = "⇧"
-            case kVK_Option:
-                character = "⌥"
-            case kVK_Control:
-                character = "⌃"
-            case kVK_RightCommand:
-                character = "⌘"
-            case kVK_RightShift:
-                character = "⇧"
-            case kVK_RightOption:
-                character = "⌥"
-            case kVK_RightControl:
-                character = "⌃"
+                return "`"
             case kVK_Function:
-                character = "fn"
+                return "fn"
             case kVK_F17:
-                character = "F17"
+                return "F17"
             case kVK_F18:
-                character = "F18"
+                return "F18"
             case kVK_F19:
-                character = "F19"
+                return "F19"
             case kVK_F20:
-                character = "F20"
+                return "F20"
             case kVK_F5:
-                character = "F5"
+                return "F5"
             case kVK_F6:
-                character = "F6"
+                return "F6"
             case kVK_F7:
-                character = "F7"
+                return "F7"
             case kVK_F3:
-                character = "F3"
+                return "F3"
             case kVK_F8:
-                character = "F8"
+                return "F8"
             case kVK_F9:
-                character = "F9"
+                return "F9"
             case kVK_F11:
-                character = "F11"
+                return "F11"
             case kVK_F13:
-                character = "F13"
+                return "F13"
             case kVK_F16:
-                character = "F16"
+                return "F16"
             case kVK_F14:
-                character = "F14"
+                return "F14"
             case kVK_F10:
-                character = "F10"
+                return "F10"
             case kVK_F12:
-                character = "F12"
+                return "F12"
             case kVK_F15:
-                character = "F15"
+                return "F15"
             case kVK_Help:
-                character = "Help"
+                return "Help"
             case kVK_Home:
-                character = "Home"
+                return "Home"
             case kVK_PageUp:
-                character = "PageUp"
+                return "PageUp"
             case kVK_ForwardDelete:
-                character = "ForwardDelete"
+                return "ForwardDelete"
             case kVK_F4:
-                character = "F4"
+                return "F4"
             case kVK_End:
-                character = "End"
+                return "End"
             case kVK_F2:
-                character = "F2"
+                return "F2"
             case kVK_PageDown:
-                character = "PageDown"
+                return "PageDown"
             case kVK_F1:
-                character = "F1"
+                return "F1"
             case kVK_LeftArrow:
-                character = "←"
+                return "←"
             case kVK_RightArrow:
-                character = "→"
+                return "→"
             case kVK_DownArrow:
-                character = "↓"
+                return "↓"
             case kVK_UpArrow:
-                character = "↑"
+                return "↑"
             case kVK_JIS_Yen:
-                character = "¥"
+                return "¥"
             case kVK_JIS_Underscore:
-                character = "_"
+                return "_"
             case kVK_JIS_Eisu:
-                character = "英数"
+                return "英数"
             case kVK_JIS_Kana:
-                character = "かな"
-                
+                return "かな"
+            case kVK_Return:
+                return "enter"
+            case kVK_Tab:
+                return "tab"
+            case kVK_Space:
+                return "space"
+            case kVK_Delete:
+                return "delete"
+            case kVK_Escape:
+                return "esc"
+            case kVK_Command:
+                return "command"
+            case kVK_Shift:
+                return "shift"
+            case kVK_CapsLock:
+                return "caps"
+            case kVK_Option:
+                return "option"
+            case kVK_Control:
+                return "ctrl"
+            case kVK_RightCommand:
+                return "rightCommand"
+            case kVK_RightShift:
+                return "rightShift"
+            case kVK_RightOption:
+                return "rightOption"
+            case kVK_RightControl:
+                return "rightCtrl"
+            case kVK_F17:
+                return "f17"
+            case kVK_VolumeUp:
+                return "volumeUp"
+            case kVK_VolumeDown:
+                return "volumeDown"
+            case kVK_Mute:
+                return "mute"
             default:
-                character = ""
+                return ""
             }
-            return character
         }
     }
 }

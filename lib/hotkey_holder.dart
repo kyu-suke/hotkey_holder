@@ -109,7 +109,7 @@ class _HotKeyHolderState extends State<HotKeyHolder> {
       _initTextStyle();
       _coloringTextStyle(keyCombo.modifiers);
 
-      _keyChar = keyCombo.key.encode();
+      _keyChar = _convertKeyChar(keyCombo.key.encode());
       Magnetica.register(
           keyCombo: keyCombo,
           hotKeyName: widget.hotKeyName,
@@ -117,12 +117,34 @@ class _HotKeyHolderState extends State<HotKeyHolder> {
     });
   }
 
+  String _convertKeyChar(String char) {
+    switch(char) {
+      case "enter":
+        return "⏎";
+      case "tab":
+        return "⇔";
+      case "space":
+        return "☐";
+      case "delete":
+        return "⌫";
+      case "esc":
+        return "Esc";
+      case "command":
+        return "⌘";
+      case "shift":
+        return "⇧";
+      case "option":
+        return "⌥";
+      case "ctrl":
+        return "⌃";
+    }
+    return char;
+  }
   void _onEvent(Object? event) {
     if (event == null) {
       return;
     }
     final map = event as Map;
-    final char = map["character"] ?? "";
 
     final modifiers = map["modifiers"].cast<String?>() as List<String?>;
     final mods =
@@ -136,7 +158,7 @@ class _HotKeyHolderState extends State<HotKeyHolder> {
         return;
       }
 
-      _keyChar = char;
+      _keyChar = _convertKeyChar(map["character"] ?? "");
       final keyCombo = HotKeyHolderKeyCombo(
           key: KeyCharacterExtension.fromString(map["character"]),
           modifiers: modifiers
