@@ -93,7 +93,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "6dc9995acf5cc3e2bd56996a7a31dee3d718f0c4"
+      resolved-ref: a0b48065720950ed324011e502ef247224c451d6
       url: "https://github.com/kyu-suke/magnetica.git"
     source: git
     version: "0.0.1"
@@ -104,6 +104,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.11"
+  material_color_utilities:
+    dependency: transitive
+    description:
+      name: material_color_utilities
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.2"
   meta:
     dependency: transitive
     description:
@@ -164,7 +171,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.3"
+    version: "0.4.8"
   typed_data:
     dependency: transitive
     description:
@@ -178,7 +185,7 @@ packages:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.1"
 sdks:
   dart: ">=2.15.0-116.0.dev <3.0.0"
   flutter: ">=2.5.0"

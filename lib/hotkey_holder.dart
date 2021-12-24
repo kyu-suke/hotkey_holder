@@ -137,6 +137,10 @@ class _HotKeyHolderState extends State<HotKeyHolder> {
         return "⌥";
       case "ctrl":
         return "⌃";
+      case "eisu":
+        return "英数";
+      case "kana":
+        return "かな";
     }
     return char;
   }

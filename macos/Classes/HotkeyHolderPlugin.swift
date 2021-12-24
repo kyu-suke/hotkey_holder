@@ -263,9 +263,9 @@ public extension KeyCombo {
             case kVK_JIS_Underscore:
                 return "_"
             case kVK_JIS_Eisu:
-                return "英数"
+                return "eisu"
             case kVK_JIS_Kana:
-                return "かな"
+                return "kana"
             case kVK_Return:
                 return "enter"
             case kVK_Tab:
