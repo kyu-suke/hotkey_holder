@@ -37,7 +37,7 @@ public class HotkeyHolderPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
                     modifiers.append("command")
                 }
             }
-            
+
             eventSink([
                 "character":nsEvent.keyCombo?.convertCharacter ?? "",
                 "modifiers":modifiers,

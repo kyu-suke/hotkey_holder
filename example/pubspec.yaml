@@ -18,21 +18,16 @@ dependencies:
   flutter:
     sdk: flutter
 
+  cupertino_icons: ^1.0.4
+
   hotkey_holder:
-    # When depending on this package from a real application you should use:
-    #   hotkey_holder: ^x.y.z
-    # See https://dart.dev/tools/pub/dependencies#version-constraints
-    # The example app is bundled with the plugin so we use a path dependency on
-    # the parent directory to use the current plugin's version.
     path: ../
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
   magnetica:
     git:
       url: https://github.com/kyu-suke/magnetica.git
       ref: main
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
